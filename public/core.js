@@ -1,1 +1,1 @@
-var urlShortener = angular.module('urlShortener', ['urlShortenerController']);
+var urlShortener = angular.module('urlShortenerApp', ['ngResource', 'ngRoute']);

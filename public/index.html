@@ -1,33 +1,48 @@
 <!doctype html>
-<html lang="en" ng-app="">
-  <head>
-    <meta charset="utf-8">
-    <title>URL shortener</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-  	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css">
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-mocks/angular-mocks.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-  </head>
-  <body ng-controller="">
-    <header>
-          <h1 class="text-center">URL shortener</h1>
-        </header>
-        <div class="container">
-          <div class="row">
-            <form class="form-inline col-md-6 col-md-offset-3" name="searchForm">
-              <div class="input-group col-md-12 input-group-lg">
-                <input class = "form-control text-center"
-                       placeholder="Please type a URL to shorten..."
-                       type="text"
-                       required>
-                <span class="input-group-btn">
-                  <button class="btn btn-success"><i class="glyphicon glyphicon-plus"></i></button>
-                </span>
-             </div>
-            </form>
+<html lang="en" ng-app="urlShortenerApp">
+<head>
+  <meta charset="utf-8">
+  <title>URL shortener</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css">
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="public/core.js"></script>
+  <script src="public/urlShortenerConroller.js"></script>
+</head>
+<body ng-controller="urlShortenerController as urlShortenerCtrl">
+  <header>
+    <h1 class="text-center">URL shortener</h1>
+  </header>
+  <div class="container">
+    <div class="row">
+      <form class="form-inline col-md-6 col-md-offset-3" name="searchForm">
+        <div class="input-group col-md-12 input-group-lg">
+          <input class = "form-control text-center"
+          placeholder="Please type a URL to shorten..."
+          type="text"
+          ng-model='urlShortenerCtrl.linkText'
+          required>
+          <span class="input-group-btn">
+            <button class="btn btn-success"><i class="glyphicon glyphicon-plus" ng-click="urlShortenerCtrl.addLink()"></i></button>
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="todo-list" class="row">
+    <div >
+      <div class="checkbox" ng-repeat="todo in main.todos" >
+        <label >
+          <div id="task" >
+            <h1>{{ todo.text }} <i id="delete"class="glyphicon glyphicon-minus" ng-click="main.deleteTodo(todo._id)"></i></h1>
+            <div>
+            </label>
           </div>
         </div>
-  </body>
-</html>
+      </div>
+    </body>
+    </html>
