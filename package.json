@@ -1,0 +1,25 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "A simple URL shortener",
+  "main": "server.js",
+  "dependencies": {    "express"    : "~4.7.2",
+    "mongoose"   : "~3.6.2",
+    "morgan"     : "~1.2.2",
+    "body-parser": "~1.5.2",
+    "method-override": "~2.1.2"},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamiebrown201/URL-Shortener.git"
+  },
+  "author": "Jamie Brown",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamiebrown201/URL-Shortener/issues"
+  },
+  "homepage": "https://github.com/jamiebrown201/URL-Shortener#readme"
+}
